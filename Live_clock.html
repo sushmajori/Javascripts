@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Live_Clock</title>
+	</head>
+	<body onload='displ()'  bgcolor=black>
+		<script>
+			function displ(){
+				var dt = new Date();
+				var h = dt.getHours();
+				var m = dt.getMinutes();
+				var s = dt.getSeconds();
+				
+				var cs = (s < 10 ? '0' : '')+s;
+				var cm = (m < 10 ? '0' : '')+m;
+				var ch = (h < 10 ? '0' : '')+h;
+				
+				var t = ch +":"+ cm +":"+ cs ;
+				
+				document.getElementById('dt').innerHTML=t;
+				setTimeout(displ,1000);
+			}
+			displ();		
+			
+			st = setInterval(displ,1000);
+			
+		
+		</script>
+	
+		<center>
+		<div id='dt' style='height:50px;margin-top:200px; width:300px; background:aliceblue; color:black; text-align:center; padding:55px 55px 55px 55px; font-size:40px;'>			
+		
+		</div>
+		</center>
+		
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		
+		
+	</body>
+</html>
